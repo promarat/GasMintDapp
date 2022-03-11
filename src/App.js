@@ -180,13 +180,13 @@ function App() {
             <img src={Logo} alt="Logo" width={420} height={140}/>
             <div className="button-wrap">
               <a className="ml-20" rel="noreferrer" href="https://twitter.com/doodleapes_nft" target="_blank">
-                <img alt="Twitter" src={twitterPng}  height="50s"/>
+                <img alt="Twitter" className="social-btn" src={twitterPng}  height="50"/>
               </a>
               <a className="ml-20" rel="noreferrer" href="https://discord.gg/PyFgjGNtGd" target="_blank">
-                <img alt="Discord" src={discordPng} height="50"/>
+                <img alt="Discord" className="social-btn" src={discordPng} height="50"/>
               </a>
               <a className="ml-20" rel="noreferrer" href="https://opensea.io/collection/doodle-apes-society-das" target="_blank">
-                <img alt="Opensea" src={openseaPng} height="55"/>
+                <img alt="Opensea" className="social-btn" src={openseaPng} height="55"/>
               </a>
               {walletAddress ? 
               <p className="address-text">{walletAddress.substr(0,6) + "..." + walletAddress.substr(walletAddress.length - 4)}</p> :

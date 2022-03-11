@@ -92,8 +92,8 @@ header .button-wrap {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .address-text {
@@ -489,6 +489,10 @@ main .mintform {
         width: 203px !important;
         height: 439px !important;
     }
+
+    .social-btn{
+        height: 50px;
+    }
 }
 
 @media only screen and (max-width: 860px) {
@@ -498,7 +502,11 @@ main .mintform {
     .header {
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+    }
+
+    .social-btn{
+        height: 35px;
     }
 }
 
