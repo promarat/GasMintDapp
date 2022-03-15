@@ -6,31 +6,11 @@ import twitterPng from "./assets/imgs/twitter.png";
 import discordPng from "./assets/imgs/discord.png";
 import openseaPng from "./assets/imgs/opensea.png";
 import mainPng from "./assets/imgs/hide.gif";
-import kingpng from "./assets/imgs/King.png";
-import alienpng from "./assets/imgs/Alien.png";
-import bubblegumpng from "./assets/imgs/Bubble_Gum.png";
-import skeletonpng from "./assets/imgs/Skeleton.png";
-import spacepng from "./assets/imgs/Space.png";
-import leftarrow from "./assets/imgs/left.png";
-import rightarrow from "./assets/imgs/right.png";
 import './App.css';
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from 'react-accessible-accordion';
 import { useEffect, useState } from "react";
 import contractAbi from "./abi/doodle.json";
-import wlUserList from "./wl/user.json";
-import publicProof from "./wl/public.json";
-import { isCompositeComponent } from "react-dom/cjs/react-dom-test-utils.production.min";
 
-const contractAddress1 = "0x0e099d20e5f8fAD56C3BDb18Fe499Bc958248251"; // Main Net
-const contractAddress2 = "0x0e099d20e5f8fAD56C3BDb18Fe499Bc958248251"; //Main Net
-const contractAddress3 = "0x0e099d20e5f8fAD56C3BDb18Fe499Bc958248251"; // Main Net
-const contractAddress4 = "0xA8d09b2C953cd253745B79Db1a22Aa53DdA73B35";
+const contractAddress = "0x191e17D8bd4Aaf35d11924A2C73cE4681eD63342";
 const sale = true;
 const publicSale = true;
 
@@ -79,14 +59,14 @@ function App() {
    
             //Public Sale
             if(chainId === '0x4') {
-              const contract = new web3.eth.Contract(nftContract, contractAddress4);
+              const contract = new web3.eth.Contract(nftContract, contractAddress);
               let isPresale = await contract.methods.presale().call(async(err,result)=>{
                 if (err){
                   notificationfunc("warning", "Please check your wallet.");
                 }
                 else {
                   await contract.methods.mint(walletAddress, quantity).send({
-                    value: result ? 0 : (50000000000000000*quantity),
+                    value: result ? 0 : (25000000000000000*quantity),
                     from: walletAddress
                   })
                   .then(data => {
@@ -149,7 +129,7 @@ function App() {
           if (sale) {
             setInterval( async () => {
               if (web3){
-                let contract = new web3.eth.Contract(contractAbi, contractAddress4);
+                let contract = new web3.eth.Contract(contractAbi, contractAddress);
                 if (contract){
                   await contract.methods.totalSupply().call((err, result) => {
                     if (err){
