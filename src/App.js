@@ -160,7 +160,7 @@ function App() {
               <a className="ml-20" rel="noreferrer" href="https://discord.gg/PyFgjGNtGd" target="_blank">
                 <img alt="Discord" className="social-btn" src={discordPng} height="50"/>
               </a>
-              <a className="ml-20" rel="noreferrer" href="https://opensea.io/collection/doodle-apes-society-das" target="_blank">
+              <a className="ml-20" rel="noreferrer" href="https://opensea.io/collection/grown-apes-society" target="_blank">
                 <img alt="Opensea" className="social-btn" src={openseaPng} height="55"/>
               </a>
               {walletAddress ? 
