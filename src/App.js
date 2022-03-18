@@ -10,7 +10,7 @@ import './App.css';
 import { useEffect, useState } from "react";
 import contractAbi from "./abi/doodle.json";
 
-const contractAddress = "0x42F95803cCB7D9FC5eB6A1Bf19F2c0Da12E0EE4B";
+const contractAddress = "0xDD35aeB7818fdF9afe6b3d422Bc1c2Fa478744A2";
 const sale = true;
 const publicSale = true;
 
