@@ -19,10 +19,9 @@ function App() {
   var nftContract;
   var address;
   var chainId;
-  const [maxQuantity] = useState(10);
+  const [maxQuantity] = useState(5);
   const [quantity, setQuantity] = useState(0);
   const [walletAddress, setWalletAddress] = useState('');
-  const [legendaryState, setLegendaryState] = useState(0);
   const [leftToken, setLeftToken] = useState(5000);
   if(window.ethereum != null) {
   	web3 = new Web3(window.ethereum);
@@ -46,7 +45,7 @@ function App() {
       if (quantity <= 0){
         notificationfunc("warning", "Quantity should be more than 0.");
       } else {
-        if (quantity > maxQuantity) {
+        if (publicSale && quantity > maxQuantity) {
           notificationfunc("error", "Max quantity is " + maxQuantity);
         } else {
           nftContract = contractAbi;
@@ -60,7 +59,7 @@ function App() {
             //Public Sale
             if(chainId === '0x4') {
               const contract = new web3.eth.Contract(nftContract, contractAddress);
-              let isPresale = await contract.methods.presale().call(async(err,result)=>{
+              await contract.methods.presale().call(async(err,result)=>{
                 if (err){
                   notificationfunc("warning", "Please check your wallet.");
                 }
@@ -86,9 +85,6 @@ function App() {
     }
   }
 
-  const nextLegendary = (nextNumber) => {
-    setLegendaryState(nextNumber);
-  }
 
   const notificationfunc = (type, message) => {
     switch (type) {
@@ -109,8 +105,8 @@ function App() {
     }
   }
 
-  const nopresale = () => {
-    notificationfunc("info", "Mint presale will be live on Jan 8th");
+  const noSaletime = () => {
+    notificationfunc("info", "Mint presale will be live on March 18th");
   }
 
   const checkConnection = async () => {
@@ -208,7 +204,7 @@ function App() {
               {/* <h2 className="sub-title">2500 at 0.05 Max 3 per transactions</h2> */}
               <div className="max-title">Enter Quantity</div>
               <input className="quantity-input" type="number" value={quantity} onChange={(e) => setQuantity(e.target.value < 0 ? 0  : e.target.value)} placeholder={0} min="0"/>
-              <button type="button" className="mint-button" disabled="" onClick={sale ? mintToken : nopresale}>MINT</button>
+              <button type="button" className="mint-button" disabled="" onClick={sale ? mintToken : noSaletime}>MINT</button>
               <h3 className="left-token"><span className="cgreen">{leftToken}</span>/<span className="cpink">5000</span> <span className="cblue">left</span></h3>
             </div>
           </main>
