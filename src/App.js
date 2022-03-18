@@ -10,7 +10,7 @@ import './App.css';
 import { useEffect, useState } from "react";
 import contractAbi from "./abi/doodle.json";
 
-const contractAddress = "0x191e17D8bd4Aaf35d11924A2C73cE4681eD63342";
+const contractAddress = "0x42F95803cCB7D9FC5eB6A1Bf19F2c0Da12E0EE4B";
 const sale = true;
 const publicSale = true;
 
@@ -57,7 +57,7 @@ function App() {
             });
    
             //Public Sale
-            if(chainId === '0x4') {
+            if(chainId === '0x3') {
               const contract = new web3.eth.Contract(nftContract, contractAddress);
               await contract.methods.presale().call(async(err,result)=>{
                 if (err){
