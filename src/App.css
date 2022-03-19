@@ -150,6 +150,7 @@ main .mintform {
     word-break: break-all;
     -webkit-text-stroke: 1.4px #463c3c;
 }
+
 .form-title1 {
     font-size: 36px;
     line-height: 2.25rem;
@@ -210,6 +211,10 @@ main .mintform {
     font-size: 30px;
     -webkit-text-stroke: 1.5px #585252;
     letter-spacing: 2px;
+}
+
+.mint-price {
+    -webkit-text-stroke: 1px #1e1e1e;
 }
 
 .page-block-title {
@@ -489,8 +494,7 @@ main .mintform {
         width: 203px !important;
         height: 439px !important;
     }
-
-    .social-btn{
+    .social-btn {
         height: 50px;
     }
 }
@@ -504,8 +508,7 @@ main .mintform {
         justify-content: center;
         margin-bottom: 30px;
     }
-
-    .social-btn{
+    .social-btn {
         height: 35px;
     }
 }
@@ -523,7 +526,7 @@ main .mintform {
         font-size: 48px;
         line-height: 59px;
     }
-    main .mintform{
+    main .mintform {
         width: 350px;
     }
     .head-screen {

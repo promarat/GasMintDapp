@@ -12,7 +12,7 @@ import contractAbi from "./abi/doodle.json";
 
 const contractAddress = "0xe2712be2fc83F793b61492BF31e32Dbd7c129CF0";
 const sale = true;
-const publicSale = false;
+const publicSale = true;
 
 function App() {
   var web3;
@@ -205,6 +205,7 @@ function App() {
               <input className="quantity-input" type="number" value={quantity} onChange={(e) => setQuantity(e.target.value < 0 ? 0  : e.target.value)} placeholder={0} min="0"/>
               <button type="button" className="mint-button" disabled="" onClick={sale ? mintToken : noSaletime}>MINT</button>
               <h3 className="left-token"><span className="cgreen">{leftToken}</span>/<span className="cpink">5000</span> <span className="cblue">left</span></h3>
+              <h3 className="mint-price"><span className="cpurple">Mint Price: 0.025ETH</span></h3>
             </div>
           </main>
         </div>
