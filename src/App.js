@@ -12,7 +12,7 @@ import contractAbi from "./abi/doodle.json";
 
 const contractAddress = "0xe2712be2fc83F793b61492BF31e32Dbd7c129CF0";
 const sale = true;
-const publicSale = true;
+const publicSale = false;
 
 function App() {
   var web3;
